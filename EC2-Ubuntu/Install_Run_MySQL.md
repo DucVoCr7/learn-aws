@@ -16,6 +16,8 @@ sudo systemctl status mysql
 
 sudo mysql
 
+mysql -u root -p
+
 ## Step 5: Update the password for the MySql Server
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'place-your-password-here';
