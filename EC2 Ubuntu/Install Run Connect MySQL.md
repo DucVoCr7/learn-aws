@@ -67,7 +67,7 @@ mysql -u root -p
 CREATE USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY '1234567890';
 
 ## Step 14:
-GRANT ALL ON *.* to 'admin'@'%'
+GRANT ALL ON *.* to 'admin'@'%';
 
 ## Step 15:
 FLUSH PRIVILEGES;
