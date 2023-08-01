@@ -24,18 +24,21 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'place-yo
 
 FLUSH PRIVILEGES;
 
-## Step 7: 
+## Step 7:
+
 sudo su
 
-## Step 8: 
+## Step 8:
+
 cd /etc/mysql/mysql.conf.d
 
 ## Step 9: Open file mysqld.cnf
+
 sudo nano mysqld.cnf
 
 ## Step 10: Change 2 line bin-address and mysqlx-bind-address
 
-Before: 
+Before:
 bin-address = 127.0.0.1
 mysqlx-bind-address = 127.0.0.1
 
@@ -46,23 +49,29 @@ bin-address = 0.0.0.0
 mysqlx-bind-address = 0.0.0.0
 
 ## Step 11: Restart mysql service
+
 sudo systemctl restart mysql.service
 
 ## Step 12: Return mysql
+
 mysql -u root -p
 
 ## Step 13: Create user
+
 CREATE USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY '1234567890';
 
 ## Step 14:
+
 GRANT ALL ON *.* to 'admin'@'%';
 
 ## Step 15:
+
 FLUSH PRIVILEGES;
 
 ## Các bước khác
 
 # Bỏ qua bước này
+
 ## Step 15: Test the MySql server if it is working by running sample sql queries
 
 CREATE DATABASE mysql_test;
@@ -78,4 +87,5 @@ SELECT * FROM table1;
 ## Step 16: Connect MySQL from MySQL Workbench with user admin and password
 
 ## Step 17: Firewall all port for MySQL Workbench
+
 sudo ufw allow from any to any port 3306 proto tcp
